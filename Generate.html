@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MLBB Free Diamonds Reward</title>
+  <!-- Adsterra Popunder Script -->
+  <script src="https://www.profitablegatecpm.com/1234567890abcdef"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --primary: #FFD700;
+      --secondary: #1f3b64;
+      --dark: #0b1c36;
+      --light: #f8f9fa;
+      --success: #28a745;
+    }
+    
+    body {
+      margin: 0; 
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, var(--dark), var(--secondary));
+      color: var(--light);
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+    
+    .container {
+      max-width: 450px;
+      margin: 30px auto;
+      background: rgba(0, 0, 0, 0.85);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+      text-align: center;
+      border: 1px solid rgba(255, 215, 0, 0.2);
+    }
+    
+    .header {
+      margin-bottom: 25px;
+      position: relative;
+    }
+    
+    .header::after {
+      content: "";
+      display: block;
+      width: 80%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+      margin: 15px auto 0;
+    }
+    
+    h2 {
+      color: var(--primary);
+      margin: 0;
+      font-size: 28px;
+      font-weight: 600;
+    }
+    
+    .subtitle {
+      color: #aaa;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #ddd;
+      font-size: 14px;
+    }
+    
+    input, select {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid rgba(255, 215, 0, 0.3);
+      border-radius: 8px;
+      font-size: 15px;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      transition: all 0.3s;
+    }
+    
+    input:focus, select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.2);
+    }
+    
+    button {
+      width: 100%;
+      padding: 14px;
+      margin: 20px 0 15px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      background: var(--primary);
+      color: #000;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    
+    button:hover {
+      background: #ffc800;
+      transform: translateY(-2px);
+    }
+    
+    button:active {
+      transform: translateY(0);
+    }
+    
+    .loading-container {
+      display: none;
+      margin: 25px 0;
+    }
+    
+    .loading-bar {
+      width: 100%;
+      height: 8px;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+    
+    .loading-fill {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), #FFA500);
+      transition: width 0.3s;
+      border-radius: 4px;
+    }
+    
+    .loading-text {
+      color: #aaa;
+      font-size: 13px;
+      margin-top: 8px;
+    }
+    
+    .status-box {
+      background: rgba(11, 28, 54, 0.7);
+      border: 1px solid rgba(255, 215, 0, 0.3);
+      border-radius: 10px;
+      padding: 15px;
+      margin: 20px 0;
+      text-align: left;
+      display: none;
+    }
+    
+    .status-box h3 {
+      color: var(--primary);
+      margin-top: 0;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .status-box p {
+      margin: 10px 0;
+      line-height: 1.5;
+    }
+    
+    .status-box small {
+      color: #aaa;
+      font-size: 12px;
+    }
+    
+    .activity-feed {
+      max-height: 250px;
+      overflow-y: auto;
+      margin: 25px 0;
+      scrollbar-width: thin;
+      scrollbar-color: var(--primary) transparent;
+    }
+    
+    .activity-feed::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    .activity-feed::-webkit-scrollbar-thumb {
+      background-color: var(--primary);
+      border-radius: 3px;
+    }
+    
+    .comment-box {
+      background: rgba(17, 17, 17, 0.7);
+      border-left: 3px solid var(--primary);
+      border-radius: 6px;
+      padding: 12px;
+      margin-bottom: 12px;
+    }
+    
+    .comment-box strong {
+      color: var(--primary);
+      font-size: 14px;
+    }
+    
+    .comment-box p {
+      margin: 8px 0;
+      font-size: 14px;
+      color: #ddd;
+    }
+    
+    .comment-box small {
+      color: #777;
+      font-size: 11px;
+    }
+    
+    .stats-bar {
+      display: flex;
+      justify-content: space-between;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 10px 15px;
+      border-radius: 8px;
+      margin: 15px 0;
+      font-size: 13px;
+    }
+    
+    .stat-item {
+      text-align: center;
+    }
+    
+    .stat-value {
+      color: var(--primary);
+      font-weight: 600;
+    }
+    
+    .disclaimer {
+      font-size: 11px;
+      color: #777;
+      margin-top: 25px;
+      line-height: 1.5;
+    }
+    
+    .skip-btn {
+      background: transparent;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+      border-radius: 8px;
+      padding: 10px;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: all 0.3s;
+    }
+    
+    .skip-btn:hover {
+      background: rgba(255, 215, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h2>MLBB Free Diamonds Reward</h2>
+      <p class="subtitle">Official Partner Reward • Limited Time</p>
+    </div>
+    
+    <div class="form-group">
+      <label for="username">MLBB Account ID</label>
+      <input id="username" placeholder="Example: 12345678(1234)" type="text">
+    </div>
+    
+    <div class="form-group">
+      <label for="diamondSelect">Select Diamonds</label>
+      <select id="diamondSelect">
+        <option value="250">250 Diamonds</option>
+        <option value="500">500 Diamonds</option>
+        <option value="1000">1000 Diamonds</option>
+        <option value="2000">2000 Diamonds</option>
+        <option value="5000">5000 Diamonds (Most Popular)</option>
+      </select>
+    </div>
+    
+    <button onclick="startLoading()">CLAIM FREE DIAMONDS</button>
+    
+    <div class="loading-container" id="loadingContainer">
+      <div class="loading-bar">
+        <div class="loading-fill" id="loadingFill"></div>
+      </div>
+      <div class="loading-text" id="loadingText">Connecting to MLBB server...</div>
+    </div>
+    
+    <div class="status-box" id="statusBox">
+      <h3>🎉 Diamond Transfer Success!</h3>
+      <p id="statusMessage"></p>
+      <small>Transaction processed at <span id="statusTime"></span></small>
+    </div>
+    
+    <div class="stats-bar">
+      <div class="stat-item">
+        <div class="stat-value" id="claimedToday">1,247</div>
+        <div>Claimed Today</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" id="onlineNow">328</div>
+        <div>Online Now</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" id="available">4,892</div>
+        <div>Available</div>
+      </div>
+    </div>
+    
+    <div class="activity-feed" id="activityFeed">
+      <h4 style="margin-top: 0; color: var(--primary);">Recent Claims</h4>
+      <div id="comments"></div>
+    </div>
+    
+    <button class="skip-btn" onclick="window.open('https://www.profitableratecpm.com/kjn49xb8x?key=fdb96d8d2c9dd18d50af20484e53e970')">
+      Skip Verification
+    </button>
+    
+    <p class="disclaimer">
+      This is an unofficial reward program. We are not affiliated with Moonton. 
+      Diamonds are provided by third-party sponsors. Limited to one claim per account.
+    </p>
+  </div>
+
+  <script>
+    const names = [
+      "@fajar18", "LaylaExpert", "MiyaFan", "AlucardMain", "TigrealTank", 
+      "EudoraMage", "ClaudeMM", "GusionPlayer", "FannyGod", "JohnsonRider"
+    ];
+    
+    const commentsArr = [
+      "Diamonds received instantly! Thanks!",
+      "Legit! Got my 1000 diamonds in 5 mins",
+      "This promotion works perfectly",
+      "Verified my account and got the diamonds",
+      "5000 diamonds added to my account",
+      "Fast and easy diamond claim",
+      "Official partner indeed, no issues",
+      "My whole squad used this, all worked",
+      "First time getting free diamonds that actually work",
+      "Mobile Legends should partner with you guys"
+    ];
+    
+    const loadingMessages = [
+      "Connecting to MLBB servers...",
+      "Verifying account details...",
+      "Processing diamond request...",
+      "Finalizing transaction...",
+      "Almost done..."
+    ];
+    
+    function getTime() { 
+      const now = new Date();
+      return now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+    }
+    
+    function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    
+    function updateStats() {
+      document.getElementById('claimedToday').textContent = 
+        (getRandomInt(1200, 1500)).toLocaleString();
+      document.getElementById('onlineNow').textContent = 
+        getRandomInt(300, 350);
+      document.getElementById('available').textContent = 
+        (getRandomInt(4500, 5000)).toLocaleString();
+    }
+    
+    function startLoading() {
+      const username = document.getElementById('username').value.trim();
+      if (!username) {
+        alert("Please enter your MLBB Account ID!");
+        return;
+      }
+      
+      // Show loading container
+      const loadingContainer = document.getElementById('loadingContainer');
+      loadingContainer.style.display = 'block';
+      
+      const loadingFill = document.getElementById('loadingFill');
+      const loadingText = document.getElementById('loadingText');
+      
+      let progress = 0;
+      let messageIndex = 0;
+      
+      const interval = setInterval(() => {
+        progress += getRandomInt(2, 8);
+        if (progress > 100) progress = 100;
+        
+        loadingFill.style.width = progress + '%';
+        
+        // Update loading message every 20% progress
+        if (progress % 20 === 0 && messageIndex < loadingMessages.length) {
+          loadingText.textContent = loadingMessages[messageIndex];
+          messageIndex++;
+        }
+        
+        if (progress >= 100) {
+          clearInterval(interval);
+          loadingText.textContent = "Transfer complete!";
+          showStatus(username);
+          generateComment();
+          updateStats();
+          
+          // Auto-redirect to Adsterra offer after 3 seconds
+          setTimeout(() => {
+            window.open('https://www.profitableratecpm.com/kjn49xb8x?key=fdb96d8d2c9dd18d50af20484e53e970', '_blank');
+          }, 3000);
+        }
+      }, 300);
+    }
+    
+    function showStatus(username) {
+      const amount = document.getElementById('diamondSelect').value;
+      const time = getTime();
+      
+      const statusBox = document.getElementById('statusBox');
+      const statusMessage = document.getElementById('statusMessage');
+      const statusTime = document.getElementById('statusTime');
+      
+      statusMessage.innerHTML = `
+        <strong>${amount} Diamonds</strong> have been sent to account 
+        <strong>${username}</strong>. Please check your in-game mailbox.
+      `;
+      
+      statusTime.textContent = time;
+      statusBox.style.display = 'block';
+    }
+    
+    function generateComment() {
+      const name = names[Math.floor(Math.random() * names.length)];
+      const text = commentsArr[Math.floor(Math.random() * commentsArr.length)];
+      const time = getTime();
+      
+      const comment = document.createElement('div');
+      comment.className = 'comment-box';
+      comment.innerHTML = `
+        <strong>${name}</strong>
+        <p>${text}</p>
+        <small>${time}</small>
+      `;
+      
+      const commentsContainer = document.getElementById('comments');
+      commentsContainer.insertBefore(comment, commentsContainer.firstChild);
+      
+      // Limit to 15 comments
+      if (commentsContainer.children.length > 15) {
+        commentsContainer.removeChild(commentsContainer.lastChild);
+      }
+    }
+    
+    // Initialize the page
+    window.onload = function() {
+      updateStats();
+      
+      // Add initial comments
+      for (let i = 0; i < 8; i++) {
+        generateComment();
+      }
+      
+      // Update stats and add new comments periodically
+      setInterval(() => {
+        updateStats();
+        if (Math.random() > 0.3) {
+          generateComment();
+        }
+      }, 5000);
+    };
+  </script>
+</body>
+</html>
